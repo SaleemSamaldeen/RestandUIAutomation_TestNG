@@ -25,10 +25,7 @@ public class CreditCardPage extends TestSetup {
         PageFactory.initElements(driver, this);
     }
 
-    int timeout = 50;
-
-    @FindBy(xpath = "//a[@title='iPhone 12 mit Vertrag']")
-    public WebElement iphone12WithContract;
+    int timeout = 30;
 
     @FindBy(xpath = "//a[text()='Akzeptieren']")
     public WebElement cookies;
@@ -39,7 +36,7 @@ public class CreditCardPage extends TestSetup {
     @FindBy(xpath = "//input[@type='email' and @id='cl_login']")
     public WebElement enterEmailAddress;
 
-    @FindBy(xpath = "//button[@id='c24-uli-login-btn']//span")
+    @FindBy(xpath = "//button[@data-tid='submit-button']")
     public WebElement loginButton;
 
     @FindBy(xpath = "//div[contains(@class,'cl-r-anonym')]//div[contains(@class,'cl-box-option')]")
@@ -73,8 +70,8 @@ public class CreditCardPage extends TestSetup {
         firstProductWeiterButton.click();
         waitUntilElementLocated("//input[@type='email' and @id='cl_login']", "Email field");
         enterEmailAddress.sendKeys(email);
-        waitUntilElementLocated("//button[@id='c24-uli-login-btn']", "Login Button");
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("locator")));
+        waitUntilElementLocated("//button[@data-tid='submit-button']", "Login Button");
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-tid='submit-button']")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", loginButton);
         Thread.sleep(5000);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", checkBox);
