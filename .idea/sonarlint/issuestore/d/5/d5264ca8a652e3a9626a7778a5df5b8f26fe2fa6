@@ -1,6 +1,0 @@
-
-N
-java:S1854"8Remove this useless assignment to local variable "data".(Ñ°²ÿ
-?
-java:S1481")Remove this unused "data" local variable.(Ñ°²ÿ
-n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(š¢òC
