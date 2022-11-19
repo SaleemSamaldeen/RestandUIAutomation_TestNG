@@ -24,7 +24,7 @@ public class Check24TC01 extends TestSetup {
 
     @Test(dataProvider = "GenericDataProvider", dataProviderClass = TestDataReader.class, testName = "RestAPITask",
             description = "Verify REST-Webservice test task")
-    public void googleSearch(String endpoint, String parameter) throws InterruptedException, IOException, ParseException {
+    public void googleSearch(String endpoint, String parameter) throws IOException, ParseException {
         restServices = new RestServices(test);
         restServices.getJSONResponseBody(endpoint,parameter);
     }
